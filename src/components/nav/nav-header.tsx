@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 import { Label } from "@/components/ui/label";
 import { SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarInput, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator, useSidebar } from "@/components/ui/sidebar";
-import { SITE_TITLE } from "@/config/site";
+import { SITE_TITLE } from "@/config/constants";
 import { cn } from "@/lib/utils";
 
 export default function NavHeader() {

@@ -1,11 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { DrillIcon, LocateFixedIcon, PackageIcon } from "lucide-react";
 
-export const DATABASE_PREFIX = "inventoryManager";
-export const SITE_TITLE = "Inventory manager";
-export const SITE_TITLE_TEMPLATE = "%s - Inventory manager";
-export const SITE_DESCRIPTION = "Manage your assets.";
-
 export type SidebarItem = {
   title: string;
   url: string;

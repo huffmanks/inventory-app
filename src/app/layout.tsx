@@ -1,4 +1,4 @@
-import { SITE_DESCRIPTION, SITE_TITLE, SITE_TITLE_TEMPLATE } from "@/config/site";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_TITLE_TEMPLATE } from "@/config/constants";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";

@@ -81,6 +81,9 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
+      '@next/env':
+        specifier: ^15.1.7
+        version: 15.1.7
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
         version: 5.2.2(prettier@3.5.1)

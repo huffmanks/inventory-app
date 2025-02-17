@@ -1,7 +1,7 @@
+import { relations } from "drizzle-orm";
 import { integer, jsonb, pgTableCreator, serial, text, timestamp, uniqueIndex, uuid, varchar } from "drizzle-orm/pg-core";
 
-import { DATABASE_PREFIX } from "@/config/site";
-import { relations } from "drizzle-orm";
+import { DATABASE_PREFIX } from "@/config/constants";
 
 export const pgTable = pgTableCreator((name: string) => `${DATABASE_PREFIX}_${name}`);
 

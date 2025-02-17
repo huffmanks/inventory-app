@@ -43,6 +43,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@next/env": "^15.1.7",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^20.17.19",
     "@types/react": "^19.0.10",
