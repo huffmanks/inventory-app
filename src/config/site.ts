@@ -1,4 +1,5 @@
-import { DrillIcon, LocateFixedIcon, LucideIcon, PackageIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { DrillIcon, LocateFixedIcon, PackageIcon } from "lucide-react";
 
 export const DATABASE_PREFIX = "inventoryManager";
 export const SITE_TITLE = "Inventory manager";

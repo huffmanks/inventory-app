@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# Docker
+/docker-data
+
 # Serwist
 public/sw*
 public/swe-worker*
