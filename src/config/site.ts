@@ -1,146 +1,70 @@
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { DrillIcon, LocateFixedIcon, LucideIcon, PackageIcon } from "lucide-react";
 
 export const DATABASE_PREFIX = "inventoryManager";
 export const SITE_TITLE = "Inventory manager";
 export const SITE_TITLE_TEMPLATE = "%s - Inventory manager";
 export const SITE_DESCRIPTION = "Manage your assets.";
 
-export const sidebarData = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    // avatar: ""
-  },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
-  navMain: [
-    {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+export type SidebarItem = {
+  title: string;
+  url: string;
+  icon?: LucideIcon;
+  items?: SidebarSubItem[];
 };
+
+export type SidebarSubItem = {
+  title: string;
+  url: string;
+};
+
+export const sidebarItems: SidebarItem[] = [
+  {
+    title: "Assets",
+    url: "/dashboard/assets",
+    icon: PackageIcon,
+    items: [
+      {
+        title: "Create",
+        url: "/dashboard/assets/create",
+      },
+      {
+        title: "Favorties",
+        url: "/dashboard/assets/favorites",
+      },
+      {
+        title: "Recently added",
+        url: "/dashboard/assets/recently-added",
+      },
+    ],
+  },
+  {
+    title: "Locations",
+    url: "/dashboard/locations",
+    icon: LocateFixedIcon,
+    items: [
+      {
+        title: "Create",
+        url: "/dashboard/locations/create",
+      },
+      {
+        title: "Edit",
+        url: "/dashboard/locations/edit",
+      },
+    ],
+  },
+  {
+    title: "Tools",
+    url: "/dashboard/tools",
+    icon: DrillIcon,
+    items: [
+      {
+        title: "Import/Export",
+        url: "/dashboard/tools?tool=import-export",
+      },
+      {
+        title: "Reports",
+        url: "/dashboard/tools?tool=report",
+      },
+    ],
+  },
+];

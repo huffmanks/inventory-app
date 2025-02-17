@@ -1,10 +1,14 @@
+import { ArchiveIcon, SearchIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { Label } from "@/components/ui/label";
 import { SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarInput, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator, useSidebar } from "@/components/ui/sidebar";
 import { SITE_TITLE } from "@/config/site";
-import { ArchiveIcon, SearchIcon } from "lucide-react";
-import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function NavHeader() {
+  const pathname = usePathname();
   const { open } = useSidebar();
 
   function handleOpenSearch() {
@@ -18,14 +22,16 @@ export default function NavHeader() {
           <SidebarGroup>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton className="mx-aut" tooltip={SITE_TITLE}>
-                  <ArchiveIcon className="text-base" />
-                </SidebarMenuButton>
+                <Link href="/dashboard">
+                  <SidebarMenuButton tooltip={SITE_TITLE} className={cn(pathname === "/dashboard" && "bg-sidebar-accent")}>
+                    <ArchiveIcon className={cn("text-base", pathname === "/dashboard" && "text-primary")} />
+                  </SidebarMenuButton>
+                </Link>
               </SidebarMenuItem>
 
               <SidebarMenuItem>
-                <SidebarMenuButton className="mx-aut" onClick={handleOpenSearch} tooltip="Search">
-                  <SearchIcon className="text-base" />
+                <SidebarMenuButton onClick={handleOpenSearch} tooltip="Search" className={cn(pathname === "/dashboard/search" && "bg-sidebar-accent")}>
+                  <SearchIcon className={cn("text-base", pathname === "/dashboard/search" && "text-primary")} />
                   <span className="sr-only">Search</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -39,7 +45,7 @@ export default function NavHeader() {
             <SidebarGroupContent className="mb-0">
               <SidebarMenu>
                 <SidebarMenuItem className="h-12 flex items-center mb-2">
-                  <Link href="/" className="flex gap-3 items-center justify-center">
+                  <Link href="/dashboard" className="flex gap-3 items-center justify-center">
                     <div className="p-2 rounded-full bg-background">
                       <ArchiveIcon className="text-primary size-5" />
                     </div>
