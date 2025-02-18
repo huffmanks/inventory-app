@@ -1,11 +1,11 @@
 {
-  "id": "5941d11a-79ae-40fe-85b4-9079197d7190",
+  "id": "52ae62be-056a-42f7-9886-3945b76718de",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.inventoryManager_assets": {
-      "name": "inventoryManager_assets",
+    "public.inventory_manager_assets": {
+      "name": "inventory_manager_assets",
       "schema": "",
       "columns": {
         "id": {
@@ -130,10 +130,10 @@
         }
       },
       "foreignKeys": {
-        "inventoryManager_assets_owner_id_inventoryManager_owners_id_fk": {
-          "name": "inventoryManager_assets_owner_id_inventoryManager_owners_id_fk",
-          "tableFrom": "inventoryManager_assets",
-          "tableTo": "inventoryManager_owners",
+        "inventory_manager_assets_owner_id_inventory_manager_owners_id_fk": {
+          "name": "inventory_manager_assets_owner_id_inventory_manager_owners_id_fk",
+          "tableFrom": "inventory_manager_assets",
+          "tableTo": "inventory_manager_owners",
           "columnsFrom": [
             "owner_id"
           ],
@@ -143,10 +143,10 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "inventoryManager_assets_location_id_inventoryManager_locations_id_fk": {
-          "name": "inventoryManager_assets_location_id_inventoryManager_locations_id_fk",
-          "tableFrom": "inventoryManager_assets",
-          "tableTo": "inventoryManager_locations",
+        "inventory_manager_assets_location_id_inventory_manager_locations_id_fk": {
+          "name": "inventory_manager_assets_location_id_inventory_manager_locations_id_fk",
+          "tableFrom": "inventory_manager_assets",
+          "tableTo": "inventory_manager_locations",
           "columnsFrom": [
             "location_id"
           ],
@@ -159,15 +159,15 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "inventoryManager_assets_serial_number_unique": {
-          "name": "inventoryManager_assets_serial_number_unique",
+        "inventory_manager_assets_serial_number_unique": {
+          "name": "inventory_manager_assets_serial_number_unique",
           "nullsNotDistinct": false,
           "columns": [
             "serial_number"
           ]
         },
-        "inventoryManager_assets_mac_address_unique": {
-          "name": "inventoryManager_assets_mac_address_unique",
+        "inventory_manager_assets_mac_address_unique": {
+          "name": "inventory_manager_assets_mac_address_unique",
           "nullsNotDistinct": false,
           "columns": [
             "mac_address"
@@ -178,8 +178,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.inventoryManager_barcodes": {
-      "name": "inventoryManager_barcodes",
+    "public.inventory_manager_barcodes": {
+      "name": "inventory_manager_barcodes",
       "schema": "",
       "columns": {
         "id": {
@@ -229,10 +229,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "inventoryManager_barcodes_asset_id_inventoryManager_assets_id_fk": {
-          "name": "inventoryManager_barcodes_asset_id_inventoryManager_assets_id_fk",
-          "tableFrom": "inventoryManager_barcodes",
-          "tableTo": "inventoryManager_assets",
+        "inventory_manager_barcodes_asset_id_inventory_manager_assets_id_fk": {
+          "name": "inventory_manager_barcodes_asset_id_inventory_manager_assets_id_fk",
+          "tableFrom": "inventory_manager_barcodes",
+          "tableTo": "inventory_manager_assets",
           "columnsFrom": [
             "asset_id"
           ],
@@ -245,8 +245,8 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "inventoryManager_barcodes_barcode_data_unique": {
-          "name": "inventoryManager_barcodes_barcode_data_unique",
+        "inventory_manager_barcodes_barcode_data_unique": {
+          "name": "inventory_manager_barcodes_barcode_data_unique",
           "nullsNotDistinct": false,
           "columns": [
             "barcode_data"
@@ -257,8 +257,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.inventoryManager_locations": {
-      "name": "inventoryManager_locations",
+    "public.inventory_manager_locations": {
+      "name": "inventory_manager_locations",
       "schema": "",
       "columns": {
         "id": {
@@ -303,8 +303,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.inventoryManager_owners": {
-      "name": "inventoryManager_owners",
+    "public.inventory_manager_owners": {
+      "name": "inventory_manager_owners",
       "schema": "",
       "columns": {
         "id": {
@@ -349,10 +349,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "inventoryManager_owners_user_id_inventoryManager_users_id_fk": {
-          "name": "inventoryManager_owners_user_id_inventoryManager_users_id_fk",
-          "tableFrom": "inventoryManager_owners",
-          "tableTo": "inventoryManager_users",
+        "inventory_manager_owners_user_id_inventory_manager_users_id_fk": {
+          "name": "inventory_manager_owners_user_id_inventory_manager_users_id_fk",
+          "tableFrom": "inventory_manager_owners",
+          "tableTo": "inventory_manager_users",
           "columnsFrom": [
             "user_id"
           ],
@@ -365,8 +365,8 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "inventoryManager_owners_user_id_unique": {
-          "name": "inventoryManager_owners_user_id_unique",
+        "inventory_manager_owners_user_id_unique": {
+          "name": "inventory_manager_owners_user_id_unique",
           "nullsNotDistinct": false,
           "columns": [
             "user_id"
@@ -377,8 +377,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.inventoryManager_users": {
-      "name": "inventoryManager_users",
+    "public.inventory_manager_users": {
+      "name": "inventory_manager_users",
       "schema": "",
       "columns": {
         "id": {
@@ -420,8 +420,8 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "inventoryManager_users_email_unique": {
-          "name": "inventoryManager_users_email_unique",
+        "inventory_manager_users_email_unique": {
+          "name": "inventory_manager_users_email_unique",
           "nullsNotDistinct": false,
           "columns": [
             "email"
